@@ -1,0 +1,62 @@
+.mainCarInfoDiv img {
+  max-width: 276px;
+  border-radius: 14px;
+}
+
+.mainCarDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  margin: 16px 0 8px 0;
+}
+
+.mainCarDetails h4 {
+  font-size: 16px;
+  color: #101828;
+}
+
+.mainCarDetails h4 > span {
+  color: #0b44cd;
+  margin-left: 4px;
+}
+
+.carDetails {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  color: #8d929a;
+  font-size: 12px;
+  margin-bottom: 28px;
+}
+
+.line {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.line span {
+  position: relative;
+  padding-right: 6px;
+  margin-right: 6px;
+}
+
+.line span:not(:last-child)::after {
+  content: '|';
+  position: absolute;
+  right: 0;
+  color: #c0c0c0;
+}
+
+.readMoreLink {
+  display: inline-block;
+  background-color: #3470ff;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  width: 276px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

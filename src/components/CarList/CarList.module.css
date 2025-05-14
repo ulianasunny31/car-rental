@@ -1,0 +1,12 @@
+.carList {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 32px;
+  row-gap: 48px;
+  list-style: none;
+  justify-content: center;
+}
+
+.carItem {
+  max-width: 276px;
+}
