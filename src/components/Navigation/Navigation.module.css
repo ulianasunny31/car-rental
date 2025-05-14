@@ -1,0 +1,32 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: #f2f4f7;
+  margin: 0;
+  padding: 26px 120px;
+}
+
+.navLogo {
+  color: #101828;
+  font-size: 26px;
+  margin: 0;
+}
+
+.navLogo > span {
+  color: #3470ff;
+}
+
+.navLinks {
+  display: flex;
+  gap: 32px;
+  font-size: 18px;
+}
+
+.link {
+  color: #101828;
+}
+
+.active {
+  color: #0b44cd;
+}
