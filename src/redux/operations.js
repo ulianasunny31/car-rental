@@ -10,9 +10,9 @@ export const getAllCars = createAsyncThunk(
   async (filters = {}, { rejectWithValue }) => {
     try {
       const { data } = await request.get('/cars', { params: filters });
-      return data.cars;
+      return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -21,10 +21,12 @@ export const getCarById = createAsyncThunk(
   'cars/getOne',
   async (carId, { rejectWithValue }) => {
     try {
-      const car = await request.get(`/cars/${carId}`);
-      return car;
+      const { data } = await request.get(`/cars/${carId}`);
+      console.log(data);
+
+      return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -36,7 +38,7 @@ export const getBrands = createAsyncThunk(
       const brands = await request.get('/brands');
       return brands;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
