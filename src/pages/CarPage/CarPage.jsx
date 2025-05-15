@@ -6,6 +6,7 @@ import CarFullInfo from '../../components/CarFullInfo/CarFullInfo';
 import { Formik } from 'formik';
 import { useParams } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
+import css from './CarPage.module.css';
 
 const CarPage = () => {
   const { id } = useParams();
@@ -21,8 +22,8 @@ const CarPage = () => {
   }
 
   return (
-    <div>
-      <img src={chosenCar.img} alt="" />
+    <div className={css.bigCarDetailsDiv}>
+      <img className={css.carImage} src={chosenCar.img} alt="" />
       <CarFullInfo chosenCar={chosenCar} />
       <form>
         <h4>Book your car now</h4>

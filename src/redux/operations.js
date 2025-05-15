@@ -10,7 +10,7 @@ export const getAllCars = createAsyncThunk(
   async (filters = {}, { rejectWithValue }) => {
     try {
       const { data } = await request.get('/cars', { params: filters });
-      return data;
+      return data.cars;
     } catch (error) {
       return rejectWithValue(error.message);
     }
