@@ -53,7 +53,7 @@ ul {
 }
 
 .conditionsList {
-  margin-bottom: 110px;
+  margin: 0 0 110px 0;
 }
 
 .conditionsList h3 {
@@ -66,4 +66,42 @@ ul {
   align-items: center;
   gap: 8px;
   font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.conditionsList li:last-child {
+  margin-bottom: 0;
+}
+
+.specificationsList {
+  margin: 0 0 110px 0;
+}
+
+.specificationsList h3 {
+  font-size: 20px;
+  margin: 0 0 20px 0;
+}
+
+.specificationsList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.specificationsList li:last-child {
+  margin-bottom: 0;
+}
+
+.accessFunctionList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.accessFunctionList li:last-child {
+  margin-bottom: 0;
 }

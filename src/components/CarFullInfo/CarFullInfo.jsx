@@ -67,7 +67,7 @@ const CarFullInfo = ({ chosenCar }) => {
         })}
       </ul>
 
-      <ul>
+      <ul className={css.specificationsList}>
         <h3>Car Specifications:</h3>
         <li>
           <img src={calender} />
@@ -87,7 +87,7 @@ const CarFullInfo = ({ chosenCar }) => {
         </li>
       </ul>
 
-      <ul>
+      <ul className={css.accessFunctionList}>
         <h3>Accessories and functionalities:</h3>
         {accessoriesAndFunctionalities.map((item) => {
           return (

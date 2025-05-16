@@ -1,12 +1,99 @@
 .bigCarDetailsDiv {
-  padding: 84px 120px 0 120px;
+  padding: 84px 120px 104px 120px;
   display: flex;
-  flex-wrap: wrap;
   column-gap: 72px;
+  align-items: flex-start;
 }
 
 .carImage {
   width: 640px;
   height: 512px;
   border-radius: 18px;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.bookForm {
+  border: 1px solid #dadde1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bookForm input {
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 12px;
+  width: 576px;
+  height: 48px;
+  margin-bottom: 16px;
+  padding-left: 20px;
+}
+
+.bookForm textarea {
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 12px;
+  width: 576px;
+  height: 88px;
+  margin-bottom: 24px;
+  padding-left: 20px;
+  padding-top: 12px;
+  resize: none;
+}
+
+.bookForm input::placeholder {
+  font-size: 16px;
+  color: #8d929a;
+}
+
+.bookForm textarea::placeholder {
+  font-size: 18px;
+  color: #8d929a;
+}
+
+.bookForm button {
+  width: 156px;
+  height: 44px;
+  background-color: #0b44cd;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.bookForm button:hover,
+.bookForm button:focus {
+  background-color: #3470ff;
+}
+
+.formDiv h4 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #101828;
+}
+
+.formDiv h5 {
+  margin: 0 0 24px 0;
+  font-size: 16px;
+  color: #8d929a;
+}
+
+.addToFavBtn {
+  height: 44px;
+  background-color: #0b44cd;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.addToFavBtn:hover,
+.addToFavBtn:focus {
+  background-color: #3470ff;
 }

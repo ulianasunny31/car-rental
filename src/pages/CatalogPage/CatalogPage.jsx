@@ -3,6 +3,7 @@ import CarList from '../../components/CarList/CarList';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCars } from '../../redux/operations';
 import { selectCarList } from '../../redux/selectors';
+import { FilterForm } from '../../components/FilterForm/FilterForm';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const CatalogPage = () => {
 
   return (
     <div>
-      <p>Filter form</p>
+      <FilterForm />
       <CarList cars={cars} />
     </div>
   );

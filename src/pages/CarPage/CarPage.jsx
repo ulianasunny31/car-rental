@@ -23,16 +23,24 @@ const CarPage = () => {
 
   return (
     <div className={css.bigCarDetailsDiv}>
-      <img className={css.carImage} src={chosenCar.img} alt="" />
-      <CarFullInfo chosenCar={chosenCar} />
-      <form>
-        <h4>Book your car now</h4>
-        <h5>Stay connected! We are always ready to help you.</h5>
-        <input type="text" placeholder="Name*" />
-        <input type="email" placeholder="Email*" />
-        <input type="text" placeholder="Booking date" />
-        <input type="text" placeholder="Comment" />
-      </form>
+      <div className={css.leftCol}>
+        <img className={css.carImage} src={chosenCar.img} alt="" />
+        <div className={css.formDiv}>
+          <h4>Book your car now</h4>
+          <h5>Stay connected! We are always ready to help you.</h5>
+          <form className={css.bookForm}>
+            <input type="text" placeholder="Name*" />
+            <input type="email" placeholder="Email*" />
+            <input type="text" placeholder="Booking date" />
+            <textarea type="text" placeholder="Comment" />
+            <button>Send</button>
+          </form>
+        </div>
+        <button className={css.addToFavBtn}>Add to favorites</button>
+      </div>
+      <div className={css.rightCol}>
+        <CarFullInfo chosenCar={chosenCar} />
+      </div>
     </div>
   );
 };

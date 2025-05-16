@@ -50,7 +50,7 @@
 
 .readMoreLink {
   display: inline-block;
-  background-color: #3470ff;
+  background-color: #0b44cd;
   border-radius: 12px;
   color: #fff;
   font-size: 16px;
@@ -59,4 +59,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+}
+
+.readMoreLink:hover,
+.readMoreLink:focus {
+  background-color: #3470ff;
+  color: #fff;
 }
