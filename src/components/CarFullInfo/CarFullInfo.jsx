@@ -59,7 +59,7 @@ const CarFullInfo = ({ chosenCar }) => {
         <h3>Rental Conditions</h3>
         {rentalConditions.map((condition) => {
           return (
-            <li>
+            <li key={condition}>
               <img src={checkCircle} />
               {condition}
             </li>
@@ -91,7 +91,7 @@ const CarFullInfo = ({ chosenCar }) => {
         <h3>Accessories and functionalities:</h3>
         {accessoriesAndFunctionalities.map((item) => {
           return (
-            <li>
+            <li key={item}>
               <img src={checkCircle} />
               {item}
             </li>

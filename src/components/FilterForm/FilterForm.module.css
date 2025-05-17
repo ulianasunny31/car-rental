@@ -1,0 +1,87 @@
+.filterForm {
+  display: flex;
+  align-items: flex-end;
+  width: 924px;
+  gap: 16px;
+  margin: 84px auto 56px;
+}
+
+.filterForm div {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterForm label {
+  color: #8d929a;
+  font-size: 12px;
+}
+
+.filterForm select {
+  width: 204px;
+  height: 44px;
+  background-color: #f7f7f7;
+  border: none;
+  border-radius: 12px;
+  color: #101828;
+  padding-left: 16px;
+}
+
+.filterForm select > option {
+  color: #8d929a;
+  font-size: 16px;
+}
+
+.inputsDiv {
+  display: flex;
+  flex-direction: row !important;
+  width: 320px;
+}
+
+.mileageInputDiv {
+  position: relative;
+}
+
+.mileFromInput {
+  width: 95px !important;
+  height: 44px;
+  border: none;
+  border-right: 1px solid #dadde1;
+  background-color: #f7f7f7;
+  padding-left: 65px;
+  border-radius: 12px 0 0 12px;
+  color: #101828;
+}
+
+.mileToInput {
+  width: 116px !important;
+  height: 44px;
+  background-color: #f7f7f7;
+  border: none;
+  padding-left: 44px;
+  border-radius: 0 12px 12px 0;
+  color: #101828;
+}
+
+.mileFromLabel,
+.mileToLabel {
+  font-size: 16px !important;
+  color: #101828 !important;
+  position: absolute;
+  top: 10px;
+  left: 24px;
+}
+
+.filterForm button {
+  width: 156px;
+  height: 44px;
+  background-color: #0b44cd;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.filterForm button:hover,
+.filterForm button:focus {
+  background-color: #3470ff;
+}

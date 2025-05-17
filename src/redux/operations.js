@@ -8,8 +8,12 @@ const request = axios.create({
 export const getAllCars = createAsyncThunk(
   'cars/getAll',
   async (filters = {}, { rejectWithValue }) => {
+    console.log(filters);
+
     try {
       const { data } = await request.get('/cars', { params: filters });
+      console.log(data.cars);
+
       return data.cars;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -22,7 +26,6 @@ export const getCarById = createAsyncThunk(
   async (carId, { rejectWithValue }) => {
     try {
       const { data } = await request.get(`/cars/${carId}`);
-      console.log(data);
 
       return data;
     } catch (error) {
@@ -35,8 +38,8 @@ export const getBrands = createAsyncThunk(
   'cars/getBrands',
   async (_, { rejectWithValue }) => {
     try {
-      const brands = await request.get('/brands');
-      return brands;
+      const { data } = await request.get('/brands');
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }

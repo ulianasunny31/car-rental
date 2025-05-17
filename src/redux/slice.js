@@ -31,6 +31,6 @@ const carsSlice = createSlice({
   },
 });
 
-export const { changeFilters } = carsSlice.actions;
+export const { changeFilters, resetFilters } = carsSlice.actions;
 
 export const carsReducer = carsSlice.reducer;

@@ -33,7 +33,11 @@ const CarItem = ({ car }) => {
           </div>
         </div>
       </div>
-      <Link to={`/catalog/${car.id}`} className={css.readMoreLink}>
+      <Link
+        to={`/catalog/${car.id}`}
+        state={{ fromCatalog: true }}
+        className={css.readMoreLink}
+      >
         Read more
       </Link>
     </div>
