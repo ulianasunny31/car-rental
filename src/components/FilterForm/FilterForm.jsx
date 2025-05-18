@@ -33,10 +33,8 @@ export const FilterForm = () => {
       pathname: '/catalog',
       search: `${searchParams.toString()}`,
     });
-
+    dispatch(getAllCars({ filters }));
     dispatch(changeFilters(filters));
-
-    dispatch(getAllCars(filters));
   }
 
   return (

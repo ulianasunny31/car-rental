@@ -7,7 +7,7 @@ const request = axios.create({
 
 export const getAllCars = createAsyncThunk(
   'cars/getAll',
-  async ({ filters = {}, limit = 8, page = 1 }, { rejectWithValue }) => {
+  async ({ filters = {}, page = 1, limit = 8 }, { rejectWithValue }) => {
     try {
       const { data } = await request.get('/cars', {
         params: { page, limit, ...filters },
