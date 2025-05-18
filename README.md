@@ -1,12 +1,52 @@
-# React + Vite
+# Car Rental App 🚗
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web application for browsing, selecting, and saving cars to your favorites list. This project was built as a learning experience using React.
 
-Currently, two official plugins are available:
+## 🔍 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Car Rental** allows users to:
+- View a catalog of available cars
+- See detailed information about each car
+- Add cars to a list of favorites
+- Navigate easily between pages with a smooth routing system
 
-## Expanding the ESLint configuration
+## ⚙️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** – UI Library
+- **React Router** – Client-side routing
+- **Redux Toolkit** – State management
+- **Vite** – Fast development build tool
+- **CSS Modules** – Component-scoped styling (or global CSS if preferred)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/car-rental-app.git
+2. Navigate to the project folder:
+   ```bash
+   cd car-rental-app
+3. Install dependencies:
+   ```bash
+   npm install
+4. Start the development server:
+   ```bash
+   npm start
+
+### Project Structure
+  ```bash
+   src/
+   │
+   ├── assets/             # Static assets like images and icons
+   ├── components/         # Reusable components (e.g., Navigation, Loader)
+   ├── pages/              # Pages: HomePage, CatalogPage, CarPage, Favorites
+   ├── redux/              # Redux slices and store setup
+   ├── App.jsx             # Main component with routes
+   ├── main.jsx            # App entry point with Redux Provider
+   ├── App.css             # Main styles
+   └── index.css           # Global styles
+```
+
+### 👤 Author
+Created by Uliana Seredenko.
+For learning purposes and portfolio.
