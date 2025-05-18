@@ -1,6 +1,6 @@
 import { Field, Form, Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectBrands, selectFilters } from '../../redux/selectors';
+import { selectBrands } from '../../redux/selectors';
 import { useEffect } from 'react';
 import { getAllCars, getBrands } from '../../redux/operations';
 import css from './FilterForm.module.css';
@@ -11,7 +11,6 @@ export const FilterForm = () => {
   const dispatch = useDispatch();
   const brands = useSelector(selectBrands);
   const navigate = useNavigate();
-  const filters = useSelector(selectFilters);
 
   useEffect(() => {
     dispatch(getBrands());
@@ -25,16 +24,19 @@ export const FilterForm = () => {
       maxMileage: mileTo,
     };
 
-    const searchParams = createSearchParams(
+    console.log(filters);
+    const cleanFilters = Object.fromEntries(
       Object.entries(filters).filter(([, v]) => v !== '')
     );
+
+    const searchParams = createSearchParams(cleanFilters);
 
     navigate({
       pathname: '/catalog',
       search: `${searchParams.toString()}`,
     });
-    dispatch(getAllCars({ filters }));
-    dispatch(changeFilters(filters));
+    dispatch(getAllCars({ filters: cleanFilters }));
+    dispatch(changeFilters(cleanFilters));
   }
 
   return (
@@ -43,12 +45,11 @@ export const FilterForm = () => {
         Favorites
       </Link>
       <Formik
-        enableReinitialize
         initialValues={{
-          brand: filters.brand,
-          price: filters.rentalPrice,
-          mileFrom: filters.minMileage,
-          mileTo: filters.maxMileage,
+          brand: '',
+          price: '',
+          mileFrom: '',
+          mileTo: '',
         }}
         onSubmit={handleSubmit}
       >
