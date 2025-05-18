@@ -3,7 +3,7 @@ import css from './CarList.module.css';
 
 export const CarList = ({ cars }) => {
   if (cars.length === 0) {
-    return <h1>No cars found</h1>;
+    return <h1 className={css.heading}>No cars found.</h1>;
   }
 
   return (

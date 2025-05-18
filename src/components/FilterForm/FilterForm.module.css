@@ -3,7 +3,6 @@
   align-items: flex-end;
   width: 924px;
   gap: 16px;
-  margin: 84px auto 56px;
 }
 
 .filterForm div {
@@ -79,9 +78,32 @@
   border-radius: 12px;
   color: #fff;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .filterForm button:hover,
 .filterForm button:focus {
   background-color: #3470ff;
+}
+
+.formHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 84px auto 56px;
+}
+
+.formHeader .favLink {
+  width: 156px;
+  height: 44px;
+  background-color: #0b44cd;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

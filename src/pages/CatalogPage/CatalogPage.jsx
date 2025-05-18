@@ -2,14 +2,21 @@ import { useEffect } from 'react';
 import CarList from '../../components/CarList/CarList';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCars } from '../../redux/operations';
-import { selectCarList } from '../../redux/selectors';
+import {
+  selectCarList,
+  selectPage,
+  selectTotalPages,
+} from '../../redux/selectors';
 import { FilterForm } from '../../components/FilterForm/FilterForm';
 import { useSearchParams } from 'react-router-dom';
-import { changeFilters } from '../../redux/slice';
+import { changeFilters, changePage } from '../../redux/slice';
+import css from './CatalogPage.module.css';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
   const cars = useSelector(selectCarList);
+  const page = useSelector(selectPage);
+  const totalPages = useSelector(selectTotalPages);
 
   const [searchParams] = useSearchParams();
   const filters = {
@@ -24,16 +31,25 @@ const CatalogPage = () => {
       ? Number(searchParams.get('maxMileage'))
       : '',
   };
+
   useEffect(() => {
-    console.log('filters from URL', filters);
     dispatch(changeFilters(filters));
-    dispatch(getAllCars(filters));
+    dispatch(getAllCars({ ...filters, limit: 8 }));
   }, [searchParams.toString()]);
 
+  function handleClick() {
+    dispatch(changePage());
+    dispatch(getAllCars({ ...filters, page: Number(page) + 1 }));
+  }
   return (
-    <div>
+    <div className={css.catalog}>
       <FilterForm />
-      <CarList cars={cars} />
+      <CarList handleClick={handleClick} cars={cars} />
+      {page < totalPages && (
+        <button onClick={handleClick} className={css.loadMoreBtn}>
+          Load more
+        </button>
+      )}
     </div>
   );
 };

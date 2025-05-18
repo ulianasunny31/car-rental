@@ -7,6 +7,7 @@ import { Formik } from 'formik';
 import { useParams } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import css from './CarPage.module.css';
+import { addToFavs } from '../../redux/slice';
 
 const CarPage = () => {
   const { id } = useParams();
@@ -16,6 +17,10 @@ const CarPage = () => {
   useEffect(() => {
     dispatch(getCarById(id));
   }, [dispatch, id]);
+
+  function handleClick(car) {
+    dispatch(addToFavs(car));
+  }
 
   if (!chosenCar) {
     return <Loader />;
@@ -36,7 +41,9 @@ const CarPage = () => {
             <button>Send</button>
           </form>
         </div>
-        <button className={css.addToFavBtn}>Add to favorites</button>
+        <button onClick={handleClick(chosenCar)} className={css.addToFavBtn}>
+          Add to favorites
+        </button>
       </div>
       <div className={css.rightCol}>
         <CarFullInfo chosenCar={chosenCar} />

@@ -7,14 +7,13 @@ const request = axios.create({
 
 export const getAllCars = createAsyncThunk(
   'cars/getAll',
-  async (filters = {}, { rejectWithValue }) => {
-    console.log(filters);
-
+  async ({ filters = {}, limit = 8, page = 1 }, { rejectWithValue }) => {
     try {
-      const { data } = await request.get('/cars', { params: filters });
-      console.log(data.cars);
+      const { data } = await request.get('/cars', {
+        params: { page, limit, ...filters },
+      });
 
-      return data.cars;
+      return data;
     } catch (error) {
       return rejectWithValue(error.message);
     }
