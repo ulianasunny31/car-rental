@@ -41,7 +41,10 @@ const CarPage = () => {
             <button>Send</button>
           </form>
         </div>
-        <button onClick={handleClick(chosenCar)} className={css.addToFavBtn}>
+        <button
+          onClick={() => handleClick(chosenCar)}
+          className={css.addToFavBtn}
+        >
           Add to favorites
         </button>
       </div>

@@ -7,6 +7,7 @@ import css from './Favorites.module.css';
 const Favorites = () => {
   const favorites = useSelector(selectFav);
   const dispatch = useDispatch();
+  console.log(favorites);
 
   function handleClick() {
     dispatch(resetFavs());
